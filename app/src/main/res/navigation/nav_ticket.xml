@@ -16,7 +16,7 @@
     </fragment>
     <activity
         android:id="@+id/detailActivity"
-        android:name="com.cosmocolor.sadas.ui.DetailActivity"
+        android:name="com.cosmocolor.sadas.ui.detail.DetailActivity"
         android:label="Details"
         tools:layout="@layout/activity_detail" >
         <argument
