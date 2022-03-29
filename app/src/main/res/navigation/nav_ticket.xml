@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_ticket"
+    app:startDestination="@id/listTicketFragment">
+
+    <fragment
+        android:id="@+id/listTicketFragment"
+        android:name="com.cosmocolor.sadas.ui.ListTicketFragment"
+        android:label="fragment_list_ticket"
+        tools:layout="@layout/fragment_list_ticket" >
+        <action
+            android:id="@+id/action_listTicketFragment_to_detailActivity"
+            app:destination="@id/detailActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/detailActivity"
+        android:name="com.cosmocolor.sadas.ui.DetailActivity"
+        android:label="Details"
+        tools:layout="@layout/activity_detail" >
+        <argument
+            android:name="ticket"
+            app:argType="com.cosmocolor.sadas.model.Ticket" />
+    </activity>
+</navigation>
