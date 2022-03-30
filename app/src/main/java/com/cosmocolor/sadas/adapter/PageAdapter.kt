@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class PageAdapter(
-    private val resultBundle: Bundle,
+//    private val resultBundle: Bundle,
     private val fragments: ArrayList<Fragment>,
     fragmentActivity: FragmentActivity
 ) : FragmentStateAdapter(fragmentActivity) {
@@ -16,7 +16,7 @@ class PageAdapter(
     }
 
     override fun createFragment(position: Int): Fragment {
-        fragments[position].arguments = resultBundle
+//        fragments[position].arguments = resultBundle
         return fragments[position]
     }
 

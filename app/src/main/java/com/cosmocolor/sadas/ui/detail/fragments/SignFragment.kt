@@ -1,4 +1,4 @@
-package com.cosmocolor.sadas.ui.detail
+package com.cosmocolor.sadas.ui.detail.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

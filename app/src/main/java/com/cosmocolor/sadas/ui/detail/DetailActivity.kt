@@ -6,6 +6,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.navArgs
 import com.cosmocolor.sadas.adapter.PageAdapter
 import com.cosmocolor.sadas.databinding.ActivityDetailBinding
+import com.cosmocolor.sadas.ui.detail.fragments.ClientFragment
+import com.cosmocolor.sadas.ui.detail.fragments.DetailsFragment
+import com.cosmocolor.sadas.ui.detail.fragments.EvidenceFragment
+import com.cosmocolor.sadas.ui.detail.fragments.SignFragment
 import com.cosmocolor.sadas.util.Constanst.TICKET_BUNDLE
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
@@ -44,18 +48,19 @@ class DetailActivity : AppCompatActivity() {
         titles.add("Firma")
 
         val resultBundle = Bundle()
-        resultBundle.putParcelable(TICKET_BUNDLE, args.ticket)
+        resultBundle.putParcelable("ggg", args.ticket)
 
-        binding.viewPager2.isUserInputEnabled = false
+        //Línea para habilitar el swipe
+        binding.viewPager2.isUserInputEnabled = true
         pageAdapter = PageAdapter(
-            resultBundle,
+//            resultBundle,
             fragments,
             this
         )
         binding.viewPager2.apply {
             adapter = pageAdapter
         }
-        TabLayoutMediator(binding.tableLayout, binding.viewPager2){tab, position ->
+        TabLayoutMediator(binding.tableLayout, binding.viewPager2) { tab, position ->
             tab.text = titles[position]
         }.attach()
     }
@@ -63,6 +68,7 @@ class DetailActivity : AppCompatActivity() {
     private fun setUpToolBar() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = args.ticket.id
-        supportActionBar?.setDisplayShowHomeEnabled(true)    }
+        supportActionBar?.title = args.ticket.nombreProyecto
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+    }
 }
