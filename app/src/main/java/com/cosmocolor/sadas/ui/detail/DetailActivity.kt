@@ -6,10 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.navArgs
 import com.cosmocolor.sadas.adapter.PageAdapter
 import com.cosmocolor.sadas.databinding.ActivityDetailBinding
-import com.cosmocolor.sadas.ui.detail.fragments.ClientFragment
-import com.cosmocolor.sadas.ui.detail.fragments.DetailsFragment
-import com.cosmocolor.sadas.ui.detail.fragments.EvidenceFragment
-import com.cosmocolor.sadas.ui.detail.fragments.SignFragment
+import com.cosmocolor.sadas.ui.detail.fragments.*
 import com.cosmocolor.sadas.util.Constanst.TICKET_BUNDLE
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,7 +36,7 @@ class DetailActivity : AppCompatActivity() {
         fragments.add(DetailsFragment())
         fragments.add(ClientFragment())
         fragments.add(EvidenceFragment())
-        fragments.add(SignFragment())
+        fragments.add(SignatureFragment())
 
         val titles = ArrayList<String>()
         titles.add("Detalles")
